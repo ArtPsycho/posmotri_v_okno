@@ -75,6 +75,22 @@ ol {
 .search-form__label {
   display: inline-flex;
   width: fit-content;
+  cursor: pointer;
+}
+
+.search-form__textfield:focus {
+  outline: none;
+}
+
+.search-form__textfield:active {
+  border: 1px solid #fff;
+  outline: none;
+}
+
+.search-form__label:has(.search-form__textfield):has(:focus-visible) {
+  border: 1px 0 solid #fff;
+  outline: 1px solid #fff;
+  outline-offset: 1px;
 }
 
 .search-form__textfield {
@@ -82,17 +98,16 @@ ol {
   background-color: transparent;
   font-family: inherit;
   font-size: inherit;
-  padding: 2.5px 12px 2.5px 0;
+  font-weight: 400;
+  padding: 2.5px 0;
   border-left: none;
   border-right: none;
   border-top: 1px solid #fff;
   border-bottom: 1px solid #fff;
+  border-radius: 0;
   appearance: none;
   cursor: pointer;
-}
-
-.search-form__textfield:active {
-  border: 1px solid #fff;
+  color: #fff;
 }
 
 .search-form__textfield::placeholder {
@@ -119,11 +134,29 @@ ol {
 
 .search-form__pseudo-checkbox {
   display: block;
-  margin: 1.5px 6px 1.5px 0;
+  margin: 2px 6px 1px 0;
   width: 19px;
   height: 19px;
   border: 1px solid #fff;
+}
+
+
+.search-form__label:has(.search-form__checkbox):has(:focus-visible) {
+  outline: 1px solid #fff;
+  outline-offset: 1px;
+}
+
+.search-form__checkbox:checked + .search-form__pseudo-checkbox {
+  width: 19px;
+  height: 19px;
+  background-color: #fff;
+  outline: 1px solid #000;
+  outline-offset: -2px;
   cursor: pointer;
+}
+
+.search-form__label:has(.search-form__checkbox):hover {
+  text-decoration: underline;
 }
 
 .button {
@@ -146,11 +179,11 @@ ol {
   text-decoration: underline;
 }
 
-.button:focus {
+.search-form__submit-button:focus {
   outline: none;
 }
 
-.button:focus-visible {
+.search-form__submit-button:focus-visible {
   border: 1px solid #fff;
   outline: 1px solid #fff;
   outline-offset: 1px;
@@ -162,9 +195,19 @@ ol {
 }
 
 .more-button {
-  padding-top: 6px;
-  padding-bottom: 6px;
-  width: 100%;
+  padding: 6px 144.5px;   
+}
+
+.more-button:focus {
+  outline: none;
+}
+
+.more-button:focus-visible {
+  border: 1px solid #fff;
+  outline: 1px solid #fff;
+  outline-offset: 1px;
+  margin: 2px;
+  padding: 6px 144px;
 }
 
 .content__details {
