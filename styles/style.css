@@ -149,7 +149,16 @@ ol {
   width: 19px;
   height: 19px;
   background-color: #fff;
-  outline: 1px solid #000;
+  outline: 1px solid #1B1919;
+  outline-offset: -2px;
+  cursor: pointer;
+}
+
+.search-form__pseudo-checkbox:active {
+  width: 19px;
+  height: 19px;
+  background-color: #fff;
+  outline: 1px solid #1B1919;
   outline-offset: -2px;
   cursor: pointer;
 }
@@ -194,7 +203,8 @@ ol {
 }
 
 .more-button {
-  padding: 6px 144.5px;   
+  padding: 6px 0;
+  width: 100%; 
 }
 
 .more-button:focus {
@@ -205,8 +215,7 @@ ol {
   border: 1px solid #fff;
   outline: 1px solid #fff;
   outline-offset: 1px;
-  margin: 2px;
-  padding: 6px 144px;
+  width: 100%;
 }
 
 .content__details {
@@ -236,20 +245,24 @@ ol {
   height: 298px;
   overflow: auto;
   position: relative;
+  padding: 2px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .content__list::-webkit-scrollbar {
   width: 0;
 }
 
-.content__list-item:not(:last-child) {
-  margin-bottom: 30px;
-}
-
 .content__card-link {
   display: block;
   color: #fff;
   text-decoration: none;
+}
+
+.content__card-link:active {
+  background-color: #545050;
 }
 
 .content__card-link:focus {
@@ -298,6 +311,7 @@ ol {
   width: 194px;
   height: 103px;
   margin: 2px;
+  object-fit: cover;
 }
 
 .visually-hidden {
